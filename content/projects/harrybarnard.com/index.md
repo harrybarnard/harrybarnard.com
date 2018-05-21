@@ -1,6 +1,7 @@
 +++
 date = "2018-05-14"
 draft = false
+github = "harrybarnard/harrybarnard.com"
 link = "https://harrybarnard.com"
 title = "My Website"
 subtitle = "website design and development"

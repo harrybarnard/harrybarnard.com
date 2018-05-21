@@ -55,5 +55,6 @@ You'll need to create an aws.json (in the project root) file to configure your A
 [aws.example.json](https://github.com/harrybarnard/harrybarnard.com/blob/master/aws.example.json) as a guide for this.
 
 ## Licence
-Content: CC-BY-SA-4.0
-Code: MIT
+Content: [CC-BY-SA-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/)
+
+Code: [MIT](https://choosealicense.com/licenses/mit/)
