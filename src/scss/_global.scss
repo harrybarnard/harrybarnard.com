@@ -1,0 +1,196 @@
+body {
+  @include breakpoint(medium down) {
+    padding-top: 42px;
+  }
+}
+
+.canvas-button {
+  color: $black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.title-bar {
+  padding-left: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  height: 42px;
+  @include shadow-box;
+  .title-bar-title {
+    font-family: $header-font-family;
+    text-transform: uppercase;
+  }
+  .menu-button {
+    position: fixed;
+    font-size: $title-bar-button-font-size;
+    padding: 10px;
+    top: -10px;
+    left: 5px;
+    width: 60px;
+    height: 60px;
+    color: $title-bar-button-color;
+    background-color: $title-bar-button-background-color;
+    @include shadow-box;
+    &:hover {
+      background-color: scale-color($title-bar-button-background-color, $lightness: $button-background-hover-lightness);
+    }
+  }
+}
+
+.list-margin-y {
+  margin-top: $global-padding;
+  margin-bottom: $global-padding;
+}
+
+.callout-fullwidth {
+  border-left: 0;
+  border-right: 0;
+}
+
+.lead {
+  font-family: $header-font-family;
+}
+
+.label {
+  a {
+    color: inherit;
+  }
+}
+
+.front-footer {
+  position: relative;
+  font-family: $header-font-family;
+  background: $footer-background-color;
+  padding-bottom: 2rem;
+  color: $footer-color;
+  .menu-text {
+    font-weight: inherit;
+  }
+  .top-button {
+    position: relative;
+    float: right;
+    font-size: $footer-button-font-size;
+    padding: 8px;
+    top: -5px;
+    color: $footer-button-color;
+    background-color: $footer-button-background-color;
+    box-shadow: 0 -4px 8px 0 rgba($black, 0.3);
+    height: 42px;
+    width: 42px;
+    &:hover {
+      background-color: scale-color($footer-button-background-color, $lightness: $button-background-hover-lightness);
+    }
+  }
+}
+
+p.copyright {
+  padding: $global-padding;
+}
+
+.shadow-box {
+  @include shadow-box;
+}
+
+.media-box {
+  background-color: $white;
+  @include shadow-box;
+  .media-text {
+    padding-right: $global-padding !important;
+    @include breakpoint(small down) {
+      padding-left: $global-padding !important;
+    }
+    @include breakpoint(medium up) {
+      padding-top: $global-padding;
+      padding-bottom: $global-padding;
+    }
+  }
+  .media-image {
+    width: 60%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.error {
+  text-align: center !important;
+  .error-title {
+    font-size: $error-title-size;
+    @include breakpoint(small down) {
+      font-size: rem-calc(36);
+    }
+  }
+
+}
+
+
+// FIX FOR THIS: https://github.com/zurb/foundation-sites/issues/10407
+.off-canvas-content.has-reveal-left {
+  @include breakpoint(medium down) {
+    margin-left: 0 !important;
+  }
+}
+
+.down-arrow {
+  @include shadow-box;
+  width: auto !important;
+}
+
+.paging {
+  font-family: $header-font-family;
+  text-transform: uppercase;
+  padding-bottom: $global-padding;
+  .cell {
+    padding: $global-padding;
+    .button {
+      margin: 0;
+    }
+  }
+}
+
+.button {
+  text-transform: uppercase;
+}
+
+.button-bar {
+  margin-bottom: -0.5em !important;
+  .button {
+    margin: 0 0.1rem 0.3rem 0;
+  }
+}
+
+.facebook.button {
+  @include button-style($facebook-bg, auto, $white);
+}
+
+.twitter.button {
+  @include button-style($twitter-bg, auto, $white);
+}
+
+.github.button {
+  @include button-style($github-bg, auto, $white);
+}
+
+.testimonial {
+  padding: $global-padding;
+}
+
+.testimonial-quote {
+  @include breakpoint(small down) {
+    font-size: rem-calc(18);
+  }
+}
+
+.testimonial-person {
+  margin-top: 0;
+  margin-bottom: 0;
+  @include breakpoint(small down) {
+    font-size: rem-calc(14);
+  }
+  a {
+    color: $white;
+  }
+}

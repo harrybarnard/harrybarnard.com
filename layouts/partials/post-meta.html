@@ -1,0 +1,6 @@
+<h4>{{ $categories := .Params.categories }}
+    <small>Posted{{ if $categories }} to{{ end }} {{ range $index,$category := $categories  }}
+        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/">{{ humanize . }}</a>{{ cond (eq (add $index 1) (len $categories)) "" (cond (eq (add $index 2) (len $categories)) " and" "," ) }}
+        {{ end }}
+        on {{ dateFormat "02 Jan 2006" .Date }}</small>
+</h4>

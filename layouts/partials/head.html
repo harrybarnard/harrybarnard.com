@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="{{.Site.LanguageCode}}">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {{ if .IsHome }}<title>{{ .Site.Title }}</title>{{ else }}<title>{{ .Title }} - {{ .Site.Title }}</title>{{ end }}
+    {{ with .Description }}<meta name="description" content="{{ . }}"/>{{ else }}{{if .IsPage}}<meta name="description" content="{{ .Summary }}"/>{{ else }}{{ with .Site.Params.description }}<meta name="description" content="{{ . }}"/>{{ end }}{{ end }}{{ end }}
+    <meta property="og:title" content="{{ .Title }}"/>
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}"/>
+    <meta property="og:site_name" content="{{ .Site.Title }}"/>
+    <meta property="og:locale" content="{{.Site.LanguageCode}}"/>
+
+    <link rel="canonical" href="{{ .Permalink }}"/>
+    {{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}"/>
+    {{- end }}
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/rainbow.min.css"/>
+    <link rel="stylesheet" href="/css/app.css"/>
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ .Site.BaseURL }}apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ .Site.BaseURL }}apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ .Site.BaseURL }}apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ .Site.BaseURL }}apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ .Site.BaseURL }}apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ .Site.BaseURL }}apple-touch-icon-152x152.png"/>
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon-16x16.png" sizes="16x16"/>
+    <meta name="application-name" content="{{ .Site.Title }}"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="{{ .Site.BaseURL }}mstile-144x144.png"/>
+    <meta name="msapplication-notification" content="frequency=30;polling-uri=https://notifications.buildmypinnedsite.com/?feed={{ .Site.BaseURL }}posts/index.xml&amp;id=1;polling-uri2=https://notifications.buildmypinnedsite.com/?feed={{ .Site.BaseURL }}posts/index.xml&amp;id=2;polling-uri3=https://notifications.buildmypinnedsite.com/?feed={{ .Site.BaseURL }}posts/index.xml&amp;id=3;polling-uri4=https://notifications.buildmypinnedsite.com/?feed={{ .Site.BaseURL }}posts/index.xml&amp;id=4;polling-uri5=https://notifications.buildmypinnedsite.com/?feed={{ .Site.BaseURL }}posts/index.xml&amp;id=5;cycle=1"/>
+</head>

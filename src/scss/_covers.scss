@@ -1,0 +1,39 @@
+.front-cover {
+  @include cover-background;
+  min-height: $front-cover-min-height;
+  border: 0;
+  text-align: left;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  color: $white;
+}
+
+.cover {
+  margin: 0;
+  .lead {
+    @include breakpoint(small down) {
+      font-size: rem-calc(18);
+    }
+  }
+  .cover-button {
+    position: absolute;
+    color: $cover-button-color;
+    line-height: 1;
+    font-size: $cover-button-size;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: 0 -32px;
+    padding: 0;
+    &:hover {
+      color: $cover-button-hover-color;
+      @include bounce(1s);
+    }
+  }
+  .cover-nav {
+    position: absolute;
+    left: 50%;
+    bottom: $cover-button-margin;
+  }
+}

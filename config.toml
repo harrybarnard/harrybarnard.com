@@ -1,0 +1,45 @@
+baseURL = "https://harrybarnard.com/"
+languageCode = "en-gb"
+title = "Harry Barnard"
+Paginate = 6
+summaryLength = 30
+copyright = "Site design © 2009 - 2018 Harry Barnard; posts licensed under <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International License</a>."
+
+[author]
+  name = "Harry Barnard"
+
+[taxonomies]
+  technology = "technologies"
+  topic = "topics"
+  category = "categories"
+
+[params]
+  description = "Fully-stacked, self-actualised web developer and technology wrangler."
+
+[params.bio]
+  text = "Fully-stacked, self-actualised web developer and technology wrangler."
+  location = "Brighton, UK"
+
+[params.contact]
+  email = "harry@harrybarnard.com"
+
+[params.social.github]
+  title = "GitHub"
+  url = "https://github.com/harrybarnard"
+  icon = "fab fa-github"
+  order = 1
+
+[params.social.bitbucket]
+  title = "BitBucket"
+  url = "https://bitbucket.org/harrybarnard/"
+  icon = "fab fa-bitbucket"
+  order = 2
+
+[params.social.feed]
+  title = "RSS Feed"
+  url = "/index.xml"
+  icon = "fas fa-rss"
+  order = 3
+
+[params.copyright]
+  HTML = "Site design &copy; 2018 Harry Barnard; articles licensed under <a href=\"https://choosealicense.com/licenses/cc-by-sa-4.0/\">CC-BY-SA-4.0</a>; projects have separate licenses as indidcated."

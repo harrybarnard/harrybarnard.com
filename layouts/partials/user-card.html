@@ -1,0 +1,60 @@
+<nav id="userCard" class="user-card off-canvas position-left reveal-for-large" data-off-canvas>
+    <button class="close-button" aria-label="Close" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="row column text-center">
+        <a href="/profile/" title="View my profile"><img class="thumbnail user-card-avatar" src="/img/avatar_sm.jpg"></a>
+        <h4>{{ .Site.Title }}</h4>
+        <p>{{ .Site.Params.Bio.Text | safeHTML }}</p>
+        <p class="location">
+            <i class="location-icon fas fa-map-marker-alt" aria-hidden="true"></i> <span
+                class="location-text">{{ .Site.Params.Bio.Location }}</span>
+        </p>
+    </div>
+    <ul id="mainMenu" class="vertical menu user-card-menu">
+        <li>
+            <a href="/" class="success">
+                <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                <i class="fas fa-home fa-fw" aria-hidden="true"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="/posts/" class="success">
+                <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+                <span>Posts</span>
+            </a>
+        </li>
+        <li>
+            <a href="/projects/" class="success">
+                <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                <i class="fas fa-code fa-fw" aria-hidden="true"></i>
+                <span>Projects</span>
+            </a>
+        </li>
+        <li>
+            <a href="/profile/" class="success">
+                <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                <i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+    </ul>
+    <div class="row column text-center user-card-contact">
+        <p><a href="mailto:{{ .Site.Params.Contact.Email }}" title="Send me an email">
+            <i class="fas fa-envelope fa-fw" aria-hidden="true"></i> {{ .Site.Params.Contact.Email }}
+        </a></p>
+    </div>
+    <ul id="socialMenu" class="user-card-social menu align-center">
+        {{ with .Site.Params.Social.Github }}
+            <li><a href="{{ .url }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
+        {{ with .Site.Params.Social.Bitbucket }}
+            <li><a href="{{ .url }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
+        {{ with .Site.Params.Social.Feed }}
+            <li><a href="{{ .url }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
+    </ul>
+</nav>

@@ -1,0 +1,6 @@
+<h4><a href="{{ .URL }}" target="_blank">{{ .Name }}</a></h4>
+<div class="secondary progress" role="progressbar" tabindex="0" aria-valuenow="{{ .Score }}" aria-valuemin="0" aria-valuetext="{{ .Score }} percent" aria-valuemax="100">
+  <span class="progress-meter" style="width: {{ .Score }}%">
+    <p class="progress-meter-text">{{ .Competence }}</p>
+  </span>
+</div>

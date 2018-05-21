@@ -1,0 +1,16 @@
+{{ if or (.Params.Topics) (.Params.Technologies) }}
+<p class="taxonomies-list">
+{{ if .Params.Topics }}
+{{ range sort .Params.Topics }}
+    <span class="label primary"><a title="Topic: {{ upper . }}"
+                                   href="{{ "/topics/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a></span>
+{{ end }}
+{{ end }}
+{{ if .Params.Technologies }}
+{{ range sort .Params.Technologies }}
+    <span class="label secondary"><a title="Technology: {{ upper . }}"
+                                     href="{{ "/technologies/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a></span>
+{{ end }}
+{{ end }}
+</p>
+{{ end }}

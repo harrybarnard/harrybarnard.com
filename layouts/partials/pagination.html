@@ -1,0 +1,16 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<div class="paging article-list-paging grid-x grid-padding-x">
+    <div class="small-3 cell text-right">
+        {{ if $pag.HasPrev }}
+        <a class="button secondary hollow" href="{{ $pag.Prev.URL }}"><i class="fas fa-angle-left"></i><span class="hide-for-small-only" aria-hidden="true"> Previous</span></a>
+        {{ end }}
+    </div>
+    <div class="small-6 cell text-center align-self-middle">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</div>
+    <div class="small-3 cell text-left">
+        {{ if $pag.HasNext }}
+        <a class="button secondary hollow" href="{{ $pag.Next.URL }}"><span class="hide-for-small-only">Next </span><i class="fas fa-angle-right" aria-hidden="true"></i></a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

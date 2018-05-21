@@ -1,0 +1,30 @@
+<div class="medium-6 cell">
+    <article class="article-list-item article-card" data-equalizer-watch>
+        {{ with .Resources.Match "thumb" }}
+        {{ range . }}
+        <img src="{{ .RelPermalink }}" />
+        {{ end }}
+        {{ else }}
+        <img src="/projects/images/placeholder.jpg" alt="{{ .Title }}">
+        {{ end }}
+        <div class="article-card-icons">
+            <a href="{{ .Permalink }}" title="Go to project's page"><i class="fas fa-info fa-fw"></i></a>
+            {{ if .Params.Link }}
+            <a href="{{ .Params.Link }}" title="Visit this project's website" target="_blank" rel="noopener">
+                <i class="fas fa-link fa-fw"></i>
+            </a>
+            {{ end }}
+            {{ if .Params.Github }}
+            <a href="https://github.com/{{ .Params.Github | urlize }}" target="_blank"
+               title="View this project on GitHub" rel="noopener"><i class="fab fa-github fa-fw"></i></a>
+            {{ end }}
+        </div>
+        <div class="article-card-details grid-x">
+            <h4 class="article-card-title cell large-12">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h4>
+            {{ partial "taxonomies-list.html" . }}
+        </div>
+    </article>
+</div>

@@ -1,0 +1,172 @@
+{{ partial "head.html" . }}
+
+{{ partial "body-head.html" . }}
+
+<header>
+    <section class="crumbs">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <nav class="large-12 cell" aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects/">Projects</a></li>
+                        <li>
+                            <span class="show-for-sr">Current: </span> {{ .Title }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</header>
+
+<main>
+    <section class="{{ if or (gt (len (.Resources.ByType "page")) 1) (.Params.Github) }}article-intro {{ end }}primary inset">
+        <div class="grid-container">
+            <div class="grid-x">
+                <h1><i class="fa fa-code" aria-hidden="true"></i> {{ .Title }}</h1>
+                <div class="large-12 cell">
+                    {{ with .Resources.Match "images/slide-*" }}
+                    <div class="orbit project-orbit" role="region" aria-label="Project Images" data-orbit>
+                        <div class="orbit-wrapper">
+                            {{ if gt (len .) 1 }}
+                            <div class="orbit-controls">
+                                <button class="orbit-previous">
+                                    <span class="show-for-sr">Previous Slide</span><i class="fa fa-angle-left"></i>
+                                </button>
+                                <button class="orbit-next">
+                                    <span class="show-for-sr">Next Slide</span><i class="fa fa-angle-right"></i>
+                                </button>
+                            </div>
+                            {{ end }}
+                            <ul class="orbit-container">
+                                {{ range $index, $slide := . }}
+                                <li class="{{ if eq $index 0 }}is-active {{ end }}orbit-slide">
+                                    <figure class="orbit-figure">
+                                        <img class="orbit-image" src="{{ $slide.RelPermalink }}" alt="{{ $slide.Title }}">
+                                        <figcaption class="orbit-caption">{{ $slide.Title }}</figcaption>
+                                    </figure>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                        <nav class="orbit-bullets">
+                            {{ range $index, $slide := . }}
+                            <button {{ if eq $index 0 }}class="is-active" {{end}}data-slide="{{ $index }}">
+                                <span class="show-for-sr">{{ $slide.Title }}</span>
+                                {{ if eq $index 0 }}<span class="show-for-sr">Current Slide</span>{{ end }}
+                            </button>
+                            {{ end }}
+                        </nav>
+                    </div>
+                    {{ end }}
+                </div>
+                <div class="large-12 cell callout project-details">
+                    {{ with .Content }}
+                    {{ . }}
+                    {{ else }}
+                    {{- with .Params.Github -}}
+                    {{- $github := getJSON "https://api.github.com/repos/" . -}}
+                    <h4>{{ $github.description | markdownify }}</h4>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- with .Params.Github -}}
+                    {{- $github := getJSON "https://api.github.com/repos/" . -}}
+                        <p><a href="https://github.com/{{ . }}/blob/master/LICENSE" target="_blank" rel="noreferrer">{{ $github.license.name }}</a></p>
+                    {{- end -}}
+                    {{ partial "taxonomies-list.html" . }}
+                    <div class="button-bar text-center">
+                    {{ if .Params.Link }}
+                        <a class="button secondary" href="{{ .Params.Link }}" title="Visit this project's website"
+                           target="_blank" rel="noopener">
+                            <i class="fas fa-link" aria-label="Link"></i> Website
+                        </a>
+                    {{ end }}
+                    {{ if .Params.Github }}
+                        <a class="github button" href="https://github.com/{{ .Params.Github | urlize }}"
+                           target="_blank" rel="noopener" title="View this project on GitHub">
+                            <i class="fab fa-github" aria-label="GitHub"></i> View
+                        </a>
+                    {{ end }}
+                        <a class="facebook button" role="button" title="Share this page on Facebook"
+                           href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" rel="noopener"
+                           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <i class="fab fa-facebook" aria-label="Facebook"></i> Share
+                        </a>
+                        <a class="twitter button" role="button" title="Share this page on Twitter"
+                           href="https://twitter.com/share?text={{ .Title }}&amp;url={{ .Permalink }}" rel="noopener"
+                           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <i class="fab fa-twitter" aria-label="Twitter"></i> Tweet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{{- if or (ge (len (.Resources.ByType "page")) 1) (.Params.Github) }}
+    <section class="secondary">
+        <div class="grid-container">
+            <div class="article-container grid-x">
+                <ul class="project-tabs large-12 cell" data-tabs data-link-class="project-tabs-title" id="project-tabs">
+                {{- with .Resources.ByType "page" }}
+                {{- range $index, $document := . }}
+                    <li class="project-tabs-title{{ if (eq $index 0) }} is-active{{ end }}">
+                        <a href="#{{ $document.Title | urlize }}" aria-selected="true">{{ $document.Title }}</a>
+                    </li>
+                {{ end -}}
+                {{ end -}}
+                {{- if .Params.Github }}
+                    <li class="project-tabs-title{{ if not (ge (len (.Resources.ByType "page")) 1) }} is-active{{ end }}">
+                        <a data-tabs-target="readme" href="#readme">Readme</a>
+                    </li>
+                {{ end -}}
+                </ul>
+                <div class="project-tabs-content large-12 cell" data-tabs-content="project-tabs">
+                {{- with .Resources.ByType "page" }}
+                {{- range $index, $document := . }}
+                    <div class="project-tabs-panel grid-container full{{ if (eq $index 0) }} is-active{{ end }}" id="{{ $document.Title | urlize }}">
+                        <div class="grid-x grid-margin-x">
+                            {{ if .TableOfContents }}
+                            <div class="large-3 large-order-2 cell">
+                            {{ partial "toc-aside.html" $document }}
+                            </div>
+                            {{ end }}
+                            <div class="{{ if .TableOfContents }}large-9 {{ else }}large-12 {{ end }}large-order-1 cell">
+                                <article class="article-box">
+                                {{ $document.Content }}
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                {{- end -}}
+                {{- end -}}
+                {{- if .Params.Github }}
+                    <div class="project-tabs-panel grid-container full{{ if not (ge (len (.Resources.ByType "page")) 1) }} is-active{{ end }}"
+                         id="readme">
+                        <div class="grid-x grid-margin-x">
+                            <div class="large-12 cell">
+                                <article class="article-box">
+                                {{- with .Params.Github -}}
+                                    {{- $readme := getJSON "https://api.github.com/repos/" . "/readme" -}}
+                                    {{ $readme.content | base64Decode | markdownify }}
+                                    <p class="text-center"><span class="label primary">
+                                    <a href="https://github.com/{{ . }}/blob/master/README.md">This README
+                                    is a cached version that was last updated on {{ now.Format "02 Jan 2006"}}.
+                                    It may not reflect the latest changes. Click here to view the live
+                                    version</a></span></p>
+                                {{- end -}}
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                {{ end -}}
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end -}}
+</main>
+
+{{ partial "body-foot.html" . }}

@@ -1,0 +1,72 @@
+// ANIMATIONS
+// ------------------
+
+@mixin zoom-reset($speed) {
+  transition-duration: $speed;
+  transition-timing-function: ease-out;
+}
+
+@mixin zoom-in($scale,$speed) {
+  transform: scale($scale);
+  @include zoom-reset($speed);
+}
+
+// Bounce
+
+@mixin bounce($speed) {
+  animation: bounce $speed infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+// COVERS
+// ------------
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-position: center right;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+// SHADOWS
+// ------------
+
+@mixin shadow-text {
+  text-shadow: 1px 1px 2px $black;
+}
+
+@mixin shadow-inset {
+  box-shadow: inset 4px 8px 8px 0 rgba($black, 0.3), inset 0 -4px 8px 0 rgba($black, 0.3);
+}
+
+@mixin shadow-inset-top {
+  box-shadow: inset 4px 8px 8px 0 rgba($black, 0.3);
+}
+
+@mixin shadow-box {
+  box-shadow: 4px 8px 8px 0 rgba($black, 0.3);
+}
+
+// TEXT
+// ------------
+
+@mixin header-font {
+  font-family: $header-font-family;
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+}

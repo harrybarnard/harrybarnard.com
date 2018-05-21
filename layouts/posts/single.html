@@ -1,0 +1,50 @@
+{{ partial "head.html" . }}
+
+{{ partial "body-head.html" . }}
+
+<header>
+    <section class="crumbs">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <nav class="large-12 cell" aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/posts/">Posts</a></li>
+                        <li>
+                            <span class="show-for-sr">Current: </span> {{ .Title }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</header>
+
+<main>
+    <section class="article-intro primary inset">
+        <div class="grid-container">
+            <div class="grid-x">
+                <h1 class="large-12 cell"><i class="fas fa-edit" aria-hidden="true"></i> {{ .Title }}</h1>
+            </div>
+        </div>
+    </section>
+    <section class="secondary">
+        <div class="grid-container">
+            <div class="article-container grid-x grid-margin-x grid-margin-y">
+                <div class="large-3 large-order-2 cell">
+                    {{ partial "toc-aside.html" . }}
+                    {{ partial "share-aside.html" . }}
+                </div>
+                <div class="large-9 large-order-1 cell">
+                    <article class="article-box">
+                        {{ partial "post-meta.html" . }}
+                        {{ .Content }}
+                        {{ partial "taxonomies-list.html" . }}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{ partial "body-foot.html" . }}

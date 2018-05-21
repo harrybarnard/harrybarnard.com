@@ -1,0 +1,40 @@
+{{ partial "head.html" . }}
+
+{{ partial "body-head.html" . }}
+
+<header>
+    <section class="crumbs">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <nav class="large-12 cell" aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <span class="show-for-sr">Current: </span> {{ .Title }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</header>
+
+<main>
+    <section class="primary inset error">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="large-12 cell error-title text-center">
+                    <h1 class="error-title"><i class="fas fa-exclamation" aria-hidden="true"></i> 404</h1>
+                    <h2>The resource you requested cannot be found. It may have been moved or removed.</h2>
+                    <p class="paging">
+                        <a class="button secondary hollow" href="/">
+                            <i class="fa fa-home fa-fw" aria-hidden="true"></i> Home Page
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{ partial "body-foot.html" . }}

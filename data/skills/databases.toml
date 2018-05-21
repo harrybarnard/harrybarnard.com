@@ -1,0 +1,23 @@
+[mysql]
+Name = "MySQL"
+Score = 90
+Competence = "19 years"
+URL = "https://www.mysql.com/"
+
+[couchdb]
+Name = "CouchDB"
+Score = 70
+Competence = "7 years"
+URL = "https://couchdb.apache.org/"
+
+[redis]
+Name = "Redis"
+Score = 60
+Competence = "6 years"
+URL = "https://redis.io/"
+
+[arango]
+Name = "ArangoDb"
+Score = 50
+Competence = "5 years"
+URL = "https://arangodb.com/"

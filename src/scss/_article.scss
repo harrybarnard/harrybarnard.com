@@ -1,0 +1,228 @@
+article, aside {
+  @include callout($white);
+  @include shadow-box;
+}
+
+.article-container {
+  position: relative;
+  top: -120px;
+  margin-bottom: -100px;
+}
+
+.article-intro {
+  padding-bottom: 105px;
+}
+
+article {
+  &.article-box {
+    pre > code {
+      margin-bottom: $global-margin;
+    }
+  }
+  &.article-card {
+    @extend .card;
+    @include shadow-box;
+    padding: 0 !important;
+    position: relative;
+    line-height: 1.2rem;
+    transition: all 0.35s ease;
+    .article-card-details {
+      @include card-section;
+      @include position(relative);
+    }
+    .article-card-icons {
+      @include position(absolute, 0, null, null, 0);
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      a {
+        display: block;
+        font-size: 1.5rem;
+        line-height: rem-calc(40);
+        width: rem-calc(40);
+        background-color: $white;
+        text-align: center;
+        color: $black;
+        &:hover {
+          background-color: $primary-color;
+          color: $black;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.article-card-icons a {
+  margin: 2px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 0.35s ease;
+}
+
+.article-card:hover a,
+.article-card.hover a {
+  transition: all 0.35s ease;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.article-card:hover a:nth-child(2),
+.article-card.hover a:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.article-card:hover a:nth-child(3),
+.article-card.hover a:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+aside {
+  &.article-aside-item {
+    a {
+      color: inherit;
+    }
+    &.article-toc {
+      ul, li {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      > nav {
+        padding-left: 1rem;
+        > ul > li {
+          list-style: none;
+        }
+      }
+    }
+    .article-aside-menu {
+      @include menu-base;
+      @include menu-direction(vertical);
+      li {
+        margin: 0;
+        //font-size: $user-card-menu-font-size;
+        cursor: pointer;
+        @include zoom-reset($user-card-menu-duration);
+        a {
+          margin: 0;
+          padding: $global-padding / 2 0;
+          //color: $user-card-menu-color;
+          @include header-font;
+          @include uppercase;
+          .fa-chevron-left {
+            float: left;
+            margin-right: $global-margin / 2;
+          }
+          span {
+            float: right;
+          }
+          &:hover {
+            i:first-child, svg:first-child {
+              @include zoom-in($user-card-menu-zoom, $user-card-menu-duration);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.taxonomies-list {
+  span {
+    margin-bottom: 2px;
+  }
+  .label {
+    @include header-font;
+    @include uppercase;
+  }
+}
+
+.taxonomies-menu {
+  margin-bottom: $global-margin !important;
+  a {
+    @include button(false, $secondary-color, $secondary-color, $white, solid);
+    font-weight: normal;
+  }
+}
+
+.project-orbit {
+  .orbit-container {
+    @include shadow-box;
+  }
+}
+
+.project-details {
+  @include shadow-box;
+  .menu {
+    font-family: $header-font-family;
+  }
+}
+
+.project-tabs {
+  @include tabs-container;
+  background: none;
+  border: none;
+}
+
+.project-tabs-title {
+  @include tabs-title;
+  @include shadow-box;
+  @include header-font;
+  @include uppercase;
+  color: $black;
+  a {
+    background: $light-gray;
+    color: inherit;
+  }
+  a:hover {
+    background: $light-gray;
+    color: inherit;
+  }
+  &.is-active a {
+    background: $white !important;
+    color: $black;
+  }
+}
+
+.project-tabs-content {
+  @include tabs-content;
+  border: none;
+}
+
+.project-tabs-panel {
+  @include tabs-panel;
+}
+
+.profile-accordion {
+  @include accordion-container;
+  @include shadow-box;
+}
+
+.profile-accordion-item {
+  @include accordion-item;
+  &.is-active {
+    .profile-accordion-title {
+      background: $white;
+    }
+  }
+}
+
+.profile-accordion-title {
+  @include accordion-title;
+  @include header-font;
+  @include uppercase;
+  border: none;
+  color: $black !important;
+}
+
+.profile-accordion-content {
+  @include accordion-content;
+  border: none;
+}
+
+.thumbnail.cell {
+  height: 100%; // Chrome displays images at original height without this
+  @include shadow-box;
+}
+
+

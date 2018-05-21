@@ -1,0 +1,29 @@
+[aws]
+Name = "Amazon Web Services"
+Score = 70
+Competence = "10 years"
+URL = "https://aws.amazon.com/"
+
+[apache]
+Name = "Apache"
+Score = 90
+Competence = "20 years"
+URL = "https://httpd.apache.org/"
+
+[git]
+Name = "Git"
+Score = 75
+Competence = "8 years"
+URL = "https://git-scm.com/"
+
+[linux]
+Name = "Linux"
+Score = 80
+Competence = "20 years"
+URL = "https://en.wikipedia.org/wiki/Linux"
+
+[nginx]
+Name = "Nginx"
+Score = 60
+Competence = "8 years"
+URL = "https://nginx.org/"

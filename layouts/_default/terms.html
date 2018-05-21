@@ -1,0 +1,43 @@
+{{ partial "head.html" . }}
+
+{{ partial "body-head.html" . }}
+
+<header>
+    <section class="crumbs">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <nav class="large-12 cell" aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Home</a></li>
+                        <li><span class="show-for-sr">Current: </span>{{ .Title }}</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</header>
+
+<main>
+    <section class="primary inset">
+        <div class="grid-container">
+            <h1>
+                <i class="fas fa-tag" aria-hidden="true"></i> {{ .Title | humanize }}
+            </h1>
+            <div class="grid-x grid-margin-x">
+                <div class="large-3 large-order-2 cell">
+                    {{ partial "share-aside.html" . }}
+                </div>
+                <div class="large-9 large-order-1 cell">
+                    <article class="button-bar article-box taxonomies-menu text-center">
+                        {{ $data := .Data }}
+                        {{ range $key, $value := .Data.Terms }}
+                        <a class="button" href="/{{ $data.Plural }}/{{ $key | urlize }}/">{{ $key | lower }} <span class="badge primary">{{ len $value }}</span></a>
+                        {{ end }}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{ partial "body-foot.html" . }}

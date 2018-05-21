@@ -1,0 +1,75 @@
+.user-card {
+  padding: $global-padding;
+  color: $user-card-global-color;
+  .close-button {
+    color: $user-card-global-color;
+  }
+  .user-card-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: $user-card-avatar-radius;
+    @include zoom-reset($user-card-avatar-duration);
+    &:hover {
+      @include zoom-in($user-card-avatar-zoom, $user-card-avatar-duration);
+      border-color: $user-card-avatar-border;
+    }
+  }
+  .location {
+    color: $user-card-location-color;
+    font-size: $user-card-location-font-size;
+  }
+
+  ul.user-card-menu {
+    margin-left: -$global-padding;
+    margin-right: -$global-padding;
+    li {
+      margin: 0 10px;
+      font-size: $user-card-menu-font-size;
+      cursor: pointer;
+      @include zoom-reset($user-card-menu-duration);
+      a {
+        color: $user-card-menu-color;
+        text-transform: uppercase;
+        font-family: $header-font-family;
+        i:first-child, svg:first-child {
+          float: right;
+        }
+        &:hover {
+          i:first-child, svg:first-child {
+            @include zoom-in($user-card-menu-zoom, $user-card-menu-duration);
+          }
+        }
+      }
+    }
+  }
+
+  .user-card-contact {
+    margin-top: 1.5rem;
+    p {
+      font-size: $user-card-location-font-size;
+      margin-bottom: 0.5rem;
+      a {
+        color: $user-card-social-color;
+        &:hover {
+          color: $user-card-social-hover-color;
+        }
+      }
+    }
+  }
+
+  ul.user-card-social {
+    margin-bottom: 1.5rem;
+    font-size: $user-card-social-font-size;
+    li {
+      a {
+        color: $user-card-social-color;
+        @include zoom-reset(150ms);
+        &:hover {
+          color: $user-card-social-hover-color;
+          @include zoom-in(1.5, 150ms);
+        }
+      }
+    }
+  }
+
+}

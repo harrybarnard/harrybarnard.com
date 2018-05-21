@@ -1,0 +1,29 @@
+[css]
+Name = "CSS"
+Score = 100
+Competence = "18 years"
+URL = "https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+
+[html]
+Name = "HTML\\XHTML"
+Score = 100
+Competence = "20 years"
+URL = "https://en.wikipedia.org/wiki/HTML"
+
+[less]
+Name = "Less"
+Score = 90
+Competence = "7 years"
+URL = "http://lesscss.org/"
+
+[sass]
+Name = "Sass"
+Score = 90
+Competence = "5 years"
+URL = "https://sass-lang.com/"
+
+[markdown]
+Name = "Markdown"
+Score = 80
+Competence = "8 years"
+URL = "https://daringfireball.net/projects/markdown/"

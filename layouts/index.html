@@ -1,0 +1,70 @@
+{{ partial "head.html" . }}
+
+{{ partial "body-head.html" . }}
+
+<header class="callout large cover front-cover" style="background-image: url('/img/cover_1.jpg')">
+    <div class="row column lead">
+        {{ .Content }}
+    </div>
+    <div class="cover-nav" data-magellan data-offset="-25">
+        <a class="cover-button" href="#posts" role="button" title="Scroll Down"><i class="fas fa-angle-down" aria-hidden="true"></i></a>
+    </div>
+</header>
+
+<section id="posts" class="primary inset">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <h2><i class="fa fa-edit" aria-hidden="true"></i> Latest Posts</h2>
+                <div class="grid-x grid-padding-x article-list" data-equalizer data-equalize-on="medium">
+                    {{ range first .Params.Paging.Posts (where .Data.Pages "Section" "posts") }}
+                    {{ .Render "cards" }}
+                    {{ end }}
+                </div>
+                <p class="text-center paging">
+                    <a class="button secondary hollow" href="/posts/">
+                        <i class="fa fa-edit fa-fw" aria-hidden="true"></i> More Posts
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonial" class="testimonial secondary">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <p class="lead testimonial-quote">
+                    <i class="fa fa-quote-left" aria-hidden="true"></i> {{ .Params.Testimonial.Quote | safeHTML }} <i
+                        class="fa fa-quote-right" aria-hidden="true"></i>
+                </p>
+                <p class="text-right testimonial-person">
+                    <i class="fa fa-user" aria-hidden="true"></i> <a href="{{ .Params.Testimonial.URL }}">{{ .Params.Testimonial.Person }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="primary inset">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+                <h2><i class="fa fa-code" aria-hidden="true"></i> Recent Projects</h2>
+                <div class="grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
+                    {{ range first .Params.Paging.Projects (where .Data.Pages.ByWeight "Section" "projects") }}
+                    {{ .Render "cards" }}
+                    {{ end }}
+                </div>
+                <p class="text-center paging">
+                    <a class="button secondary hollow" href="/projects/">
+                        <i class="fa fa-code fa-fw" aria-hidden="true"></i> More Projects
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ partial "body-foot.html" . }}

@@ -1,0 +1,106 @@
+{{ partial "head.html" . }}
+
+{{ partial "body-head.html" . }}
+
+<header>
+    <section class="crumbs">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <nav class="large-12 cell" aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Home</a></li>
+                        <li>
+                            <span class="show-for-sr">Current: </span> {{ .Title }}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+</header>
+
+<main>
+    <section class="article-intro primary inset">
+        <div class="grid-container">
+            <div class="grid-x">
+                <h1 class="large-12 cell"><i class="fas fa-user-circle" aria-hidden="true"></i> {{ .Title }}</h1>
+            </div>
+        </div>
+    </section>
+    <section class="secondary">
+        <div class="grid-container">
+            <div class="article-container grid-x grid-margin-x">
+                <div class="large-4 cell large-order-2">
+                    <div class="large-12 grid-x grid-margin-x large-margin-collapse">
+                        <img class="thumbnail cell small-6 large-12 large-order-1" src="images/profile_1.jpg"
+                             alt="Harry Barnard portrait"/>
+                        <img class="thumbnail cell small-6 large-12 large-order-2" src="images/vic-20.jpg"
+                             alt="Commodore Vic-20"/>
+                        <img class="thumbnail cell small-6 large-12 large-order-4" src="images/drum-kit.jpg"
+                             alt="Drum kit"/>
+                        <img class="thumbnail cell small-6 large-12 large-order-3" src="images/profile_3.jpg"
+                             alt="Harry Barnard portrait"/>
+                    </div>
+                {{ partial "share-aside.html" . }}
+                </div>
+                <div class="large-8 cell large-order-1">
+                    <article class="article-box">
+                    {{ .Content }}
+                    </article>
+                    <ul class="profile-accordion" data-accordion>
+                        <li class="profile-accordion-item is-active" data-accordion-item>
+                            <a href="#" class="profile-accordion-title">Programming Languages</a>
+                            <div class="profile-accordion-content" data-tab-content>
+                            {{ range sort .Site.Data.skills.languages "Score" "desc" }}
+                                {{ partial "skill.html" . }}
+                            {{ end }}
+                            </div>
+                        </li>
+                        <li class="profile-accordion-item" data-accordion-item>
+                            <a href="#" class="profile-accordion-title">Web Development</a>
+                            <div class="profile-accordion-content" data-tab-content>
+                            {{ range sort .Site.Data.skills.web "Score" "desc" }}
+                                {{ partial "skill.html" . }}
+                            {{ end }}
+                            </div>
+                        </li>
+                        <li class="profile-accordion-item" data-accordion-item>
+                            <a href="#" class="profile-accordion-title">Infrastructure</a>
+                            <div class="profile-accordion-content" data-tab-content>
+                            {{ range sort .Site.Data.skills.infrastructure "Score" "desc" }}
+                                {{ partial "skill.html" . }}
+                            {{ end }}
+                            </div>
+                        </li>
+                        <li class="profile-accordion-item" data-accordion-item>
+                            <a href="#" class="profile-accordion-title">Databases</a>
+                            <div class="profile-accordion-content" data-tab-content>
+                            {{ range sort .Site.Data.skills.databases "Score" "desc" }}
+                                {{ partial "skill.html" . }}
+                            {{ end }}
+                            </div>
+                        </li>
+                        <li class="profile-accordion-item" data-accordion-item>
+                            <a href="#" class="profile-accordion-title">Frameworks and Libraries</a>
+                            <div class="profile-accordion-content" data-tab-content>
+                            {{ range sort .Site.Data.skills.frameworks "Score" "desc" }}
+                                {{ partial "skill.html" . }}
+                            {{ end }}
+                            </div>
+                        </li>
+                        <li class="profile-accordion-item" data-accordion-item>
+                            <a href="#" class="profile-accordion-title">Tools</a>
+                            <div class="profile-accordion-content" data-tab-content>
+                            {{ range sort .Site.Data.skills.tools "Score" "desc" }}
+                                {{ partial "skill.html" . }}
+                            {{ end }}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{{ partial "body-foot.html" . }}

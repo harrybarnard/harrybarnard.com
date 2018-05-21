@@ -1,0 +1,45 @@
+section {
+  padding-top: $global-padding;
+  background-color: $white;
+  &.primary {
+    background-color: $primary-color;
+  }
+  &.secondary {
+    color: $white;
+    background-color: $secondary-color;
+  }
+  &.success {
+    background-color: $success-color;
+  }
+  &.warning {
+    background-color: $warning-color;
+  }
+  &.alert {
+    background-color: $alert-color;
+  }
+  &.info {
+    background-color: $info-color;
+  }
+  &.inset {
+    @include shadow-inset;
+  }
+  &.inset-top {
+    @include shadow-inset-top;
+  }
+}
+
+header {
+  section {
+    padding: 0;
+  }
+  section.title {
+    padding-top: 0.5em;
+  }
+  section.crumbs {
+    background-color: $dark-gray;
+    color: $light-gray;
+    @include breakpoint(medium down) {
+      margin-top: 0.2em;
+    }
+  }
+}

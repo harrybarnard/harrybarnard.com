@@ -1,0 +1,17 @@
+[imagick]
+Name = "ImageMagick"
+Score = 75
+Competence = "15 years"
+URL = "https://imagemagick.org/"
+
+[ffmpeg]
+Name = "FFmpeg"
+Score = 75
+Competence = "12 years"
+URL = "https://www.ffmpeg.org/"
+
+[hugo]
+Name = "Hugo"
+Score = 80
+Competence = "3 years"
+URL = "https://gohugo.io/"

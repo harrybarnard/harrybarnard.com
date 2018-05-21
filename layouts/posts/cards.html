@@ -1,0 +1,11 @@
+<div class="medium-6 cell">
+    <article class="article-list-item" data-equalizer-watch>
+        <h4>
+            <i class="fa fa-edit" aria-hidden="true"></i>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <small>{{ dateFormat "02 Jan 2006" .Date }}</small>
+        </h4>
+        <p>{{ .Summary }}{{ if .Truncated }} [&hellip;] <a href="{{ .Permalink }}">read more</a>{{ end }}</p>
+        {{ partial "taxonomies-list.html" . }}
+    </article>
+</div>
