@@ -24,8 +24,8 @@ extensive skill base in a number of technical areas.
 I use opensource technologies as much as possible and am constantly seeking new opportunities to become involved in the 
 opensource development community.
 
-I am currently focused on developing my Golang programming skills and am gaining competence in Rust whilst developing 
-experimental systems for small embedded computers such as the Raspberry Pi.
+I am currently focused on developing my Golang programming skills and am gaining competence in Rust, TypeScript and React
+whilst developing experimental systems for small embedded computers such as the Raspberry Pi.
 
 ### Music
 

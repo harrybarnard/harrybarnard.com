@@ -22,10 +22,6 @@ technologies = ["hugo", "javascript", "less", "node.js"]
 [[resources]]
   title = "Contact Page"
   src = "images/slide-4.jpg"
-[[resource]]
-  name = "casestudy"
-  title = "Case Study"
-  src = "documents/casestudy.md"
 +++
 
 

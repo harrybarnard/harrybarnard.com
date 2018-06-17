@@ -11,13 +11,13 @@ Competence = "20 years"
 URL = "https://en.wikipedia.org/wiki/HTML"
 
 [less]
-Name = "Less"
+Name = "LESS"
 Score = 90
 Competence = "7 years"
 URL = "http://lesscss.org/"
 
 [sass]
-Name = "Sass"
+Name = "SASS"
 Score = 90
 Competence = "5 years"
 URL = "https://sass-lang.com/"

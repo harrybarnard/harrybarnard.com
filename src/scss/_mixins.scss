@@ -33,6 +33,7 @@
 // ------------
 
 @mixin cover-background {
+  background-color: $dark-gray;
   background-repeat: no-repeat;
   background-position: center right;
   -webkit-background-size: cover;

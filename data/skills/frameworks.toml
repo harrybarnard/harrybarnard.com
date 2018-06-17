@@ -51,3 +51,9 @@ Name = "NW.js"
 Score = 75
 Competence = "5 years"
 URL = "https://nwjs.io/"
+
+[react]
+Name = "React"
+Score = 25
+Competence = "3 months"
+URL = "https://reactjs.org/"

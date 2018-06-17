@@ -21,8 +21,5 @@ You can find out more about how I put it together [here](/projects/harrybarnard.
 
 ## Projects
 
-I'm currently going through my back catalogue of tech projects and will and add them to my [portfolio](/projects) here 
+I'm currently going through my back catalogue of tech projects and intend to add them to my [portfolio](/projects) here 
 and [GitHub](https://github.com/harrybarnard) as appropriate over the coming weeks.
-
-I've got some legacy PHP projects in my [Bitbucket](https://bitbucket.org/harrybarnard/) that I'm looking to tidy 
-up for public consumption (and possibly containerise if I'm feeling extravagant) and should publish on GitHub soon.

@@ -15,3 +15,9 @@ Name = "Hugo"
 Score = 80
 Competence = "3 years"
 URL = "https://gohugo.io/"
+
+[oauth]
+Name = "OAuth"
+Score = 70
+Competence = "6 years"
+URL = "https://en.wikipedia.org/wiki/OAuth"

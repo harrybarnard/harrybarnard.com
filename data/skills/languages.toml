@@ -27,3 +27,9 @@ Name = "Rust"
 Score = 25
 Competence = "6 months"
 URL = "https://www.rust-lang.org/"
+
+[typescript]
+Name = "TypeScript"
+Score = 25
+Competence = "3 months"
+URL = "http://www.typescriptlang.org/"

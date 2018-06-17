@@ -53,6 +53,9 @@
         {{ with .Site.Params.Social.Bitbucket }}
             <li><a href="{{ .url }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
         {{ end }}
+        {{ with .Site.Params.Social.Linkedin }}
+            <li><a href="{{ .url }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
         {{ with .Site.Params.Social.Feed }}
             <li><a href="{{ .url }}" title="{{ .title }}"><i class="{{ .icon }}"></i></a></li>
         {{ end }}

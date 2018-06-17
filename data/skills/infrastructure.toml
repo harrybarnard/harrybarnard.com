@@ -27,3 +27,15 @@ Name = "Nginx"
 Score = 60
 Competence = "8 years"
 URL = "https://nginx.org/"
+
+[linode]
+Name = "Linode"
+Score = 60
+Competence = "6 years"
+URL = "https://www.linode.com/"
+
+[rackspace]
+Name = "Rackspace"
+Score = 50
+Comptence = "6 years"
+URL = "https://www.rackspace.com/"

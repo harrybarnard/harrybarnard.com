@@ -151,11 +151,11 @@
                                 {{- with .Params.Github -}}
                                     {{- $readme := getJSON "https://api.github.com/repos/" . "/readme" -}}
                                     {{ $readme.content | base64Decode | markdownify }}
-                                    <p class="text-center"><span class="label primary">
-                                    <a href="https://github.com/{{ . }}/blob/master/README.md">This README
-                                    is a cached version that was last updated on {{ now.Format "02 Jan 2006"}}.
-                                    It may not reflect the latest changes. Click here to view the live
-                                    version</a></span></p>
+                                    <div class="callout primary">
+                                        <p class="text-center"><a href="https://github.com/{{ . }}/blob/master/README.md">
+                                        This README is a cached version that was last updated on {{ now.Format "02 Jan 2006"}}.
+                                            It may not reflect the latest changes. Click here to view the live version</a></p>
+                                    </div>
                                 {{- end -}}
                                 </article>
                             </div>

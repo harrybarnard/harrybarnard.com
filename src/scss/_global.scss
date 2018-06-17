@@ -1,4 +1,4 @@
-body {
+.off-canvas-content {
   @include breakpoint(medium down) {
     padding-top: 42px;
   }
@@ -153,6 +153,9 @@ p.copyright {
 
 .button {
   text-transform: uppercase;
+  @include breakpoint(small down) {
+    font-size: 0.7rem;
+  }
 }
 
 .button-bar {

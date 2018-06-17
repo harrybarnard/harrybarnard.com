@@ -21,3 +21,9 @@ Name = "ArangoDb"
 Score = 50
 Competence = "5 years"
 URL = "https://arangodb.com/"
+
+[postgresql]
+Name = "PostgreSQL"
+Score = 70
+Competence = "7 years"
+URL = "https://www.postgresql.org/"

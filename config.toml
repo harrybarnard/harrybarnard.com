@@ -35,11 +35,17 @@ copyright = "Site design © 2009 - 2018 Harry Barnard; posts licensed under <a r
   icon = "fab fa-bitbucket"
   order = 2
 
+[params.social.linkedin]
+  title = "LinkedIn"
+  url = "https://www.linkedin.com/in/harry-barnard/"
+  icon = "fab fa-linkedin"
+  order = 3
+
 [params.social.feed]
   title = "RSS Feed"
   url = "/index.xml"
   icon = "fas fa-rss"
-  order = 3
+  order = 4
 
 [params.copyright]
-  HTML = "Site design &copy; 2018 Harry Barnard; articles licensed under <a href=\"https://choosealicense.com/licenses/cc-by-sa-4.0/\">CC-BY-SA-4.0</a>; projects have separate licenses as indidcated."
+  HTML = "Site design &copy; 2018 Harry Barnard; articles licensed under <a href=\"https://choosealicense.com/licenses/cc-by-sa-4.0/\">CC-BY-SA-4.0</a>; projects have separate licenses as indicated."
