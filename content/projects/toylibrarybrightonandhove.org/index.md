@@ -6,7 +6,7 @@ link = "https://toylibrarybrightonandhove.org"
 title = "Early Childhood Project Toy Library"
 subtitle = "website design and development"
 topics = ["website", "design", "development"]
-technologies = ["hugo", "javascript", "less", "node.js"]
+technologies = ["hugo", "javascript", "less", "node.js", "bootstrap"]
 [[resources]]
   name = "thumb"
   src = "images/thumb.jpg"
