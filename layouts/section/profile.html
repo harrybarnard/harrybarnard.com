@@ -47,56 +47,11 @@
                     <article class="article-box">
                     {{ .Content }}
                     </article>
-                    <ul class="profile-accordion" data-accordion>
-                        <li class="profile-accordion-item is-active" data-accordion-item>
-                            <a href="#" class="profile-accordion-title">Programming Languages</a>
-                            <div class="profile-accordion-content" data-tab-content>
-                            {{ range sort .Site.Data.skills.languages "Score" "desc" }}
-                                {{ partial "skill.html" . }}
-                            {{ end }}
-                            </div>
-                        </li>
-                        <li class="profile-accordion-item" data-accordion-item>
-                            <a href="#" class="profile-accordion-title">Web Development</a>
-                            <div class="profile-accordion-content" data-tab-content>
-                            {{ range sort .Site.Data.skills.web "Score" "desc" }}
-                                {{ partial "skill.html" . }}
-                            {{ end }}
-                            </div>
-                        </li>
-                        <li class="profile-accordion-item" data-accordion-item>
-                            <a href="#" class="profile-accordion-title">Infrastructure</a>
-                            <div class="profile-accordion-content" data-tab-content>
-                            {{ range sort .Site.Data.skills.infrastructure "Score" "desc" }}
-                                {{ partial "skill.html" . }}
-                            {{ end }}
-                            </div>
-                        </li>
-                        <li class="profile-accordion-item" data-accordion-item>
-                            <a href="#" class="profile-accordion-title">Databases</a>
-                            <div class="profile-accordion-content" data-tab-content>
-                            {{ range sort .Site.Data.skills.databases "Score" "desc" }}
-                                {{ partial "skill.html" . }}
-                            {{ end }}
-                            </div>
-                        </li>
-                        <li class="profile-accordion-item" data-accordion-item>
-                            <a href="#" class="profile-accordion-title">Frameworks and Libraries</a>
-                            <div class="profile-accordion-content" data-tab-content>
-                            {{ range sort .Site.Data.skills.frameworks "Score" "desc" }}
-                                {{ partial "skill.html" . }}
-                            {{ end }}
-                            </div>
-                        </li>
-                        <li class="profile-accordion-item" data-accordion-item>
-                            <a href="#" class="profile-accordion-title">Tools</a>
-                            <div class="profile-accordion-content" data-tab-content>
-                            {{ range sort .Site.Data.skills.tools "Score" "desc" }}
-                                {{ partial "skill.html" . }}
-                            {{ end }}
-                            </div>
-                        </li>
-                    </ul>
+                    <article class="article-box">
+                    {{ with .Site.GetPage "page" "skills.md" }}
+                        {{ .Content }}
+                    {{ end }}
+                    </article>
                 </div>
             </div>
         </div>
